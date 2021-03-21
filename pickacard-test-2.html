@@ -1,55 +1,32 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<!--
-			Display A Random Image Via JavaScript / DOM 
-			Copyright 2007 Doug Vanderweide, dba Rescue-ME
-			http://www.dougv.com
-			
-			Distributed under the Creative Commons Attribution / Share-Alike 2.5 License
-			http://creativecommons.org/licenses/by-sa/2.5/
-			
-			Any distribution or derivative work based on this script must include the
-			original source code from this work, and must retain this copyright
-			notice block intact.
-		-->
+
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Display A Random Image Via JavaScript / DOM</title>
-		<script type="text/javascript">
-			var lastIndex = 0;
-			
-			function randomImage() {
-				var theImage = document.getElementById('myimage');
-				var imgDir = 'images/';
-				var imgArray = new Array('bigtv.jpg','caddy.jpg','fatcat.jpg','manhart.jpg','roastdog.jpg');
-				var imgIndex = 0;
-				
-				if(imgArray.length > 1) {
-					while(imgIndex == lastIndex) {
-						imgIndex = Math.floor(Math.random() * imgArray.length);
-					}
-					lastIndex = imgIndex;
-				
-					var imgPath = imgDir + imgArray[imgIndex];
-					
-					theImage.src = imgPath;
-					theImage.alt = imgArray[imgIndex];
-				}
-				else {
-					return false;
-				}
-			}
-		</script>
-	    <link href="../demo.css" rel="stylesheet" type="text/css" />
+		<title>Display A Random Image Via JavaScript</title>
+<script type="text/javascript" language="JavaScript">
+<!-- Copyright 2002 Bontrager Connection, LLC
+//
+// Type the number of images you are rotating.
+
+NumberOfImagesToRotate = 11;
+
+// Specify the first and last part of the image tag.
+
+FirstPart = '<img src="card-';
+LastPart = '.png">';
+
+function printImage() {
+var r = Math.ceil(Math.random() * NumberOfImagesToRotate);
+document.write(FirstPart + r + LastPart);
+}
+//-->
+</script>
 	</head>
-		<body onload="randomImage()">
-			<h1>Display A Random Image <br />
-		    Via JavaScript / DOM </h1>
-			<p><a href="#" onclick="randomImage()"><img id="myimage" /></a>
-	        </p>
-			<p>Click image (or refresh the page) to get a new image</p>
-			<p><a href="http://www.dougv.com/blog/2007/01/14/display-a-random-image-with-javascript-dom/" rel="bookmark" title="Permanent Link: Display A Random Image With JavaScript / DOM">Display A Random Image With JavaScript / DOM</a></p>
-			<p>&nbsp; </p>
+		<body>
+<script type="text/javascript" language="JavaScript"><!--
+printImage();
+//--></script>
 		</body>
 </html>
 
