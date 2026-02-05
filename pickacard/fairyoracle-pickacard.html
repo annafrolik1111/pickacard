@@ -13,8 +13,8 @@ NumberOfImagesToRotate = 44;
 
 // Specify the first and last part of the image tag.
 
-FirstPart = '<a href="https://magicalthings.ca/collections/oracle-cards"><img style="max-width:100%; height:auto;" src="fairyoracle/';
-LastPart = '.png"></a>';
+FirstPart = '<img style="max-width:100%; height:auto;" src="fairyoracle/';
+LastPart = '.png">';
 
 function printImage() {
 var r = Math.ceil(Math.random() * NumberOfImagesToRotate);
@@ -24,10 +24,10 @@ document.write(FirstPart + r + LastPart);
 </script>
 	</head>
 		<body>
-			<p style="text-align: center;">
+			<p style="text-align: center;"><a href="https://magicalthings.ca/collections/oracle-cards">
 <script type="text/javascript" language="JavaScript"><!--
 printImage();
 //--></script>
-				</p>
+			</a></p>
 		</body>
 </html>
