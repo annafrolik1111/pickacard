@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Display Three Random Images Via JavaScript</title>
+        <style>
+            .card-container {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .card-container img {
+                max-width: 250px;
+                height: auto;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                border-radius: 8px;
+            }
+        </style>
+        <script type="text/javascript" language="JavaScript">
+        // Type the number of images you have in total.
+        NumberOfImagesToRotate = 44;
+
+        // Specify the first and last part of the image tag.
+        FirstPart = '<img src="fairyoracle/';
+        LastPart = '.png" alt="Fairy Oracle Card">';
+
+        function printImages() {
+            var selectedIndices = [];
+            
+            // Loop until we have 3 unique random card numbers
+            while (selectedIndices.length < 3) {
+                var r = Math.ceil(Math.random() * NumberOfImagesToRotate);
+                // Check if this number is already picked to ensure 3 different images
+                if (selectedIndices.indexOf(r) === -1) {
+                    selectedIndices.push(r);
+                }
+            }
+
+            // Build the HTML string for all 3 cards
+            var outputHTML = '';
+            for (var i = 0; i < selectedIndices.length; i++) {
+                outputHTML += FirstPart + selectedIndices[i] + LastPart;
+            }
+
+            // Inject them into the container element
+            document.getElementById('card-display').innerHTML = outputHTML;
+        }
+        </script>
+    </head>
+    <body>
+        <p style="text-align: center;" id="card-display" class="card-container">
+            <!-- Three random unique cards will be inserted here -->
+        </p>
+
+        <script type="text/javascript" language="JavaScript">
+            printImages();
+        </script>
+    </body>
+</html>
